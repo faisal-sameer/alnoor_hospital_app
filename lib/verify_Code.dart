@@ -47,7 +47,7 @@ class _Verify_CodeState extends State<Verify_Code> {
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(25.0),
           borderSide: BorderSide(
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
       ),
@@ -86,8 +86,9 @@ class _Verify_CodeState extends State<Verify_Code> {
 
     return Scaffold(
       appBar: AppBar(
+        elevation: 2,
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         leading: IconButton(
             onPressed: () {
               Navigator.of(context).pushNamed("LoginPage");
@@ -95,14 +96,14 @@ class _Verify_CodeState extends State<Verify_Code> {
             icon: Icon(
               Icons.arrow_back,
               color: Colors.green,
-              size: 30,
+              size: 40,
             )),
       ),
       body: Directionality(
         textDirection: TextDirection.rtl,
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.only(top: 80),
+            padding: const EdgeInsets.only(top: 10),
             child: Stack(
               children: <Widget>[
                 Container(
@@ -110,7 +111,7 @@ class _Verify_CodeState extends State<Verify_Code> {
                   width: mdw,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage("assets/images/backup.png"),
+                          image: AssetImage("assets/images/wp6432069.jpg"),
                           fit: BoxFit.cover)),
                 ),
                 Padding(

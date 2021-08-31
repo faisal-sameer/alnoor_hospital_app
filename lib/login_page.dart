@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(25.0),
           borderSide: BorderSide(
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
       ),
@@ -64,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(25.0),
             borderSide: BorderSide(
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
         ));
@@ -91,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
         textDirection: TextDirection.rtl,
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.only(top: 80),
+            padding: const EdgeInsets.only(top: 10),
             child: Stack(
               children: <Widget>[
                 Container(
@@ -99,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                   width: mdw,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage("assets/images/backup.png"),
+                          image: AssetImage("assets/images/wp6432069.jpg"),
                           fit: BoxFit.cover)),
                 ),
                 Padding(
