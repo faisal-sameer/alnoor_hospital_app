@@ -19,7 +19,9 @@ class _homepageState extends State<homepage> {
             automaticallyImplyLeading: false,
             backgroundColor: Colors.transparent,
             leading: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed("LoginPage");
+                },
                 icon: Icon(
                   Icons.logout,
                   color: Colors.green,

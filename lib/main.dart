@@ -37,6 +37,9 @@ class MyApp extends StatelessWidget {
         'homepage': (context) {
           return homepage();
         },
+        'LoginPage': (context) {
+          return LoginPage();
+        },
       },
     );
   }

@@ -60,6 +60,8 @@ class _Verify_CodeState extends State<Verify_Code> {
           borderRadius: BorderRadius.circular(24),
         ),
         onPressed: () {
+          Navigator.of(context).pushNamed("homepage");
+
           print("Verify");
         },
         padding: EdgeInsets.all(12),
@@ -75,7 +77,7 @@ class _Verify_CodeState extends State<Verify_Code> {
           print('Resend');
         },
         child: Text(
-          'اعداة ارسال الكود',
+          'اعادة ارسال الكود',
           style: TextStyle(color: Colors.blue, fontSize: 20),
           textAlign: TextAlign.center,
         ),
@@ -84,8 +86,17 @@ class _Verify_CodeState extends State<Verify_Code> {
 
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
-        actions: [],
+        leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed("LoginPage");
+            },
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.green,
+              size: 30,
+            )),
       ),
       body: Directionality(
         textDirection: TextDirection.rtl,
