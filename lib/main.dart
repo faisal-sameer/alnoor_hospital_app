@@ -1,5 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'home_page.dart';
 import 'login_page.dart';
 
 void main() => runApp(MyApp());
@@ -32,7 +33,11 @@ class MyApp extends StatelessWidget {
           nextScreen: new LoginPage(),
           splashTransition: SplashTransition.rotationTransition,
           backgroundColor: Colors.white),
-      routes: {},
+      routes: {
+        'homepage': (context) {
+          return homepage();
+        },
+      },
     );
   }
 }

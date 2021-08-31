@@ -74,7 +74,9 @@ class _LoginPageState extends State<LoginPage> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed("homepage");
+        },
         padding: EdgeInsets.all(12),
         color: Colors.green,
         child: Text('تسجيل الدخول', style: TextStyle(color: Colors.white)),
