@@ -10,14 +10,29 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   TextEditingController emailFaild = new TextEditingController();
   TextEditingController passwordLogin = new TextEditingController();
-
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
+    var mdw = MediaQuery.of(context).size.width;
+    var mdh = MediaQuery.of(context).size.height;
+
+    Color getColor(Set<MaterialState> states) {
+      const Set<MaterialState> interactiveStates = <MaterialState>{
+        MaterialState.pressed,
+        MaterialState.hovered,
+        MaterialState.focused,
+      };
+      if (states.any(interactiveStates.contains)) {
+        return Colors.blue;
+      }
+      return Colors.green;
+    }
+
     final logo = Hero(
       tag: 'hero',
       child: CircleAvatar(
         backgroundColor: Colors.transparent,
-        radius: 48.0,
+        radius: 68.0,
         child: Image.asset('assets/images/Itcnter_logo265X167.png'),
       ),
     );
@@ -74,7 +89,8 @@ class _LoginPageState extends State<LoginPage> {
             child: Stack(
               children: <Widget>[
                 Container(
-                  height: 700,
+                  height: mdh,
+                  width: mdw,
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage("assets/images/backup.png"),
@@ -89,6 +105,29 @@ class _LoginPageState extends State<LoginPage> {
                       email,
                       SizedBox(height: 8.0),
                       password,
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 15),
+                        child: Row(
+                          children: [
+                            Text(
+                                "أوافق على الشروط والأحكام، وأقر بصحة البيانات أعلاه"),
+                            Checkbox(
+                              checkColor: Colors.white,
+                              fillColor:
+                                  MaterialStateProperty.resolveWith(getColor),
+                              value: isChecked,
+                              onChanged: (bool? value) {
+                                setState(() {
+                                  isChecked = value!;
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
                       SizedBox(height: 24.0),
                       loginButton,
                     ],
