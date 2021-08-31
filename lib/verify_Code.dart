@@ -1,15 +1,14 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:noor_app/verify_Code.dart';
 
-class LoginPage extends StatefulWidget {
+class Verify_Code extends StatefulWidget {
+  const Verify_Code({Key? key}) : super(key: key);
+
   @override
-  _LoginPageState createState() => new _LoginPageState();
+  _Verify_CodeState createState() => _Verify_CodeState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  TextEditingController emailFaild = new TextEditingController();
+class _Verify_CodeState extends State<Verify_Code> {
+  TextEditingController codeFaild = new TextEditingController();
   TextEditingController passwordLogin = new TextEditingController();
   bool isChecked = false;
   @override
@@ -38,12 +37,12 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
 
-    final email = TextFormField(
-      keyboardType: TextInputType.emailAddress,
+    final code = TextFormField(
+      keyboardType: TextInputType.text,
       autofocus: false,
-      controller: emailFaild,
+      controller: codeFaild,
       decoration: InputDecoration(
-        hintText: 'رقم الهوية',
+        hintText: 'كود التحقق ',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(25.0),
@@ -54,39 +53,40 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
 
-    final password = TextFormField(
-        controller: passwordLogin,
-        autofocus: false,
-        obscureText: true,
-        decoration: InputDecoration(
-          hintText: 'رقم الجوال',
-          contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(25.0),
-            borderSide: BorderSide(
-              color: Colors.white,
-            ),
-          ),
-        ));
-
-    final loginButton = Padding(
+    final verifyButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: RaisedButton(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
         ),
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Verify_Code()),
-          );
+          print("Verify");
         },
         padding: EdgeInsets.all(12),
         color: Colors.green,
-        child: Text('تسجيل الدخول', style: TextStyle(color: Colors.white)),
+        child:
+            Text('تحقق', style: TextStyle(color: Colors.white, fontSize: 20)),
       ),
     );
+    final resendButton = Padding(
+      padding: EdgeInsets.all(12),
+      child: InkWell(
+        onTap: () {
+          print('Resend');
+        },
+        child: Text(
+          'اعداة ارسال الكود',
+          style: TextStyle(color: Colors.blue, fontSize: 20),
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
+
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        actions: [],
+      ),
       body: Directionality(
         textDirection: TextDirection.rtl,
         child: Center(
@@ -108,34 +108,14 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       logo,
                       SizedBox(height: 48.0),
-                      email,
+                      code,
                       SizedBox(height: 8.0),
-                      password,
                       SizedBox(
                         height: 20,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 15),
-                        child: Row(
-                          children: [
-                            Text(
-                                "أوافق على الشروط والأحكام، وأقر بصحة البيانات أعلاه"),
-                            Checkbox(
-                              checkColor: Colors.white,
-                              fillColor:
-                                  MaterialStateProperty.resolveWith(getColor),
-                              value: isChecked,
-                              onChanged: (bool? value) {
-                                setState(() {
-                                  isChecked = value!;
-                                });
-                              },
-                            ),
-                          ],
-                        ),
-                      ),
                       SizedBox(height: 24.0),
-                      loginButton,
+                      verifyButton,
+                      resendButton
                     ],
                   ),
                 )
