@@ -1,7 +1,9 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:noor_app/contact.dart';
 import 'home_page.dart';
 import 'login_page.dart';
+import 'profile.dart';
 
 void main() => runApp(MyApp());
 
@@ -39,6 +41,12 @@ class MyApp extends StatelessWidget {
         },
         'LoginPage': (context) {
           return LoginPage();
+        },
+        'Contact': (context) {
+          return Contact();
+        },
+        'Profile': (context) {
+          return Profile();
         },
       },
     );
