@@ -372,6 +372,9 @@ class _ProfileState extends State<Profile> {
         ),
       ],
       onItemSelected: (index) {
+        if (index == 0) {
+          Navigator.of(context).pushNamed("Service");
+        }
         if (index == 1) {
           Navigator.of(context).pushNamed("homepage");
         }

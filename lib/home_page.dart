@@ -403,6 +403,9 @@ class _homepageState extends State<homepage> {
         ),
       ],
       onItemSelected: (index) {
+        if (index == 0) {
+          Navigator.of(context).pushNamed("Service");
+        }
         if (index == 2) {
           Navigator.of(context).pushNamed("Profile");
         }
