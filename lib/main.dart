@@ -4,6 +4,7 @@ import 'package:noor_app/contact.dart';
 import 'home_page.dart';
 import 'login_page.dart';
 import 'profile.dart';
+import 'service.dart';
 
 void main() => runApp(MyApp());
 
@@ -47,6 +48,9 @@ class MyApp extends StatelessWidget {
         },
         'Profile': (context) {
           return Profile();
+        },
+        'Service': (context) {
+          return Service();
         },
       },
     );
