@@ -229,7 +229,9 @@ class _ContactState extends State<Contact> {
               ],
               onItemSelected: (index) {
                 if (index == 1) {
-                  Navigator.of(context).pushNamed("homepage");
+                  Navigator.of(context).pop();
+                } else if (index == 2) {
+                  Navigator.of(context).pushNamed("Profile");
                 }
                 setState(() {
                   pos = index;
