@@ -24,6 +24,12 @@ class _homepageState extends State<homepage> {
         child: Container(
           child: Scaffold(
             appBar: AppBar(
+              centerTitle: true,
+              title: Image.asset(
+                'assets/images/842px-Saudi_Ministry_of_Health_Logo.svg.png',
+                width: 100,
+                height: 55,
+              ),
               elevation: 2,
               automaticallyImplyLeading: false,
               backgroundColor: Colors.white,
@@ -137,7 +143,8 @@ class _homepageState extends State<homepage> {
                                     children: <Widget>[
                                       InkWell(
                                         onTap: () {
-                                          print("index");
+                                          Navigator.of(context)
+                                              .pushNamed("Appointments");
                                         },
                                         child: Container(
                                           height: 150,
@@ -181,7 +188,8 @@ class _homepageState extends State<homepage> {
                                       ),
                                       InkWell(
                                         onTap: () {
-                                          print("index");
+                                          Navigator.of(context)
+                                              .pushNamed("Drugs");
                                         },
                                         child: Container(
                                           height: 150,
@@ -225,7 +233,8 @@ class _homepageState extends State<homepage> {
                                       ),
                                       InkWell(
                                         onTap: () {
-                                          print("index");
+                                          Navigator.of(context)
+                                              .pushNamed("Result");
                                         },
                                         child: Container(
                                           height: 150,

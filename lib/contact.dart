@@ -45,10 +45,10 @@ class _ContactState extends State<Contact> {
               backgroundColor: Colors.white,
               leading: IconButton(
                   onPressed: () {
-                    Navigator.of(context).pushNamed("LoginPage");
+                    Navigator.of(context).pushNamed("homepage");
                   },
                   icon: Icon(
-                    Icons.logout,
+                    Icons.arrow_back,
                     color: Colors.green,
                     size: 40,
                   )),

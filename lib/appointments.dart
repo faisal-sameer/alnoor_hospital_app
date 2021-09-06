@@ -28,7 +28,7 @@ class _AppointmentsState extends State<Appointments> {
         backgroundColor: Colors.white,
         leading: IconButton(
             onPressed: () {
-              Navigator.of(context).pushNamed("Service");
+              Navigator.of(context).pop();
             },
             icon: Icon(
               Icons.arrow_back,

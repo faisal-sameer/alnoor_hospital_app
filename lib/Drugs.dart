@@ -15,12 +15,18 @@ class _DrugsState extends State<Drugs> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Text("الادوية"),
+        elevation: 2,
         centerTitle: true,
+        title: Text(
+          "الأدوية ",
+          style: TextStyle(
+              color: Colors.green, fontSize: 30, fontWeight: FontWeight.w800),
+        ),
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.white,
         leading: IconButton(
             onPressed: () {
-              Navigator.of(context).pushNamed("Service");
+              Navigator.of(context).pop();
             },
             icon: Icon(
               Icons.arrow_back,

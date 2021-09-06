@@ -15,12 +15,18 @@ class _ResultState extends State<Result> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Text("نتائج المختبر"),
+        elevation: 2,
         centerTitle: true,
+        title: Text(
+          "نتائج المختبر ",
+          style: TextStyle(
+              color: Colors.green, fontSize: 30, fontWeight: FontWeight.w800),
+        ),
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.white,
         leading: IconButton(
             onPressed: () {
-              Navigator.of(context).pushNamed("Service");
+              Navigator.of(context).pop();
             },
             icon: Icon(
               Icons.arrow_back,
