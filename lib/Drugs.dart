@@ -18,13 +18,15 @@ class _DrugsState extends State<Drugs> {
         automaticallyImplyLeading: false,
         title: Text("الادوية"),
         centerTitle: true,
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              icon: Icon(Icons.arrow_forward))
-        ],
+        leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed("Service");
+            },
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.green,
+              size: 40,
+            )),
       ),
       body: Stack(children: [
         Container(
