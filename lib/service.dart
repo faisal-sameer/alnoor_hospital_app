@@ -1,3 +1,4 @@
+import 'package:fancy_bar/fancy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:fancy_bar/fancy_bar.dart';
 
