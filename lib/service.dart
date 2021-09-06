@@ -51,7 +51,7 @@ class _ServiceState extends State<Service> {
                 children: <Widget>[
                   InkWell(
                     onTap: () {
-                      print("index");
+                      Navigator.of(context).pushNamed("Result");
                     },
                     child: Container(
                       height: 150,
@@ -91,7 +91,7 @@ class _ServiceState extends State<Service> {
                   ),
                   InkWell(
                     onTap: () {
-                      print("index");
+                      Navigator.of(context).pushNamed("Drugs");
                     },
                     child: Container(
                       height: 150,
