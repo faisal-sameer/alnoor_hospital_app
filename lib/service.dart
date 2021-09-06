@@ -1,3 +1,4 @@
+import 'package:fancy_bar/fancy_bar.dart';
 import 'package:flutter/material.dart';
 
 class Service extends StatefulWidget {
@@ -8,6 +9,8 @@ class Service extends StatefulWidget {
 }
 
 class _ServiceState extends State<Service> {
+  int pos = 0;
+
   @override
   Widget build(BuildContext context) {
     var mdh = MediaQuery.of(context).size.height;
@@ -169,6 +172,41 @@ class _ServiceState extends State<Service> {
               )),
         ),
       ),
+      bottomNavigationBar: bottomBar(),
+    );
+  }
+
+  FancyBottomBar bottomBar() {
+    return FancyBottomBar(
+      selectedIndex: pos,
+      items: [
+        FancyItem(
+          textColor: Colors.green,
+          title: 'الخدمات',
+          icon: Icon(Icons.design_services),
+        ),
+        FancyItem(
+          textColor: Colors.green,
+          title: 'الصفحة الرئيسية',
+          icon: Icon(Icons.home),
+        ),
+        FancyItem(
+          textColor: Colors.green,
+          title: 'الملف الشخصي',
+          icon: Icon(Icons.person),
+        ),
+      ],
+      onItemSelected: (index) {
+        if (index == 1) {
+          Navigator.of(context).pushNamed("homepage");
+        }
+        if (index == 2) {
+          Navigator.of(context).pushNamed("Profile");
+        }
+        setState(() {
+          pos = index;
+        });
+      },
     );
   }
 }
