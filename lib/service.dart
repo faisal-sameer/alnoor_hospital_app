@@ -210,7 +210,7 @@ class _ServiceState extends State<Service> {
       ],
       onItemSelected: (index) {
         if (index == 1) {
-          Navigator.of(context).pop();
+          Navigator.of(context).pushNamed("homepage");
         }
         if (index == 2) {
           Navigator.of(context).pushNamed("Profile");
