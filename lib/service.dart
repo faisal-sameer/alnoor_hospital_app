@@ -1,5 +1,6 @@
 import 'package:fancy_bar/fancy_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:fancy_bar/fancy_bar.dart';
 
 class Service extends StatefulWidget {
   const Service({Key? key}) : super(key: key);
@@ -209,7 +210,7 @@ class _ServiceState extends State<Service> {
       ],
       onItemSelected: (index) {
         if (index == 1) {
-          Navigator.of(context).pushNamed("homepage");
+          Navigator.of(context).pop();
         }
         if (index == 2) {
           Navigator.of(context).pushNamed("Profile");
