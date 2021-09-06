@@ -1,6 +1,8 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:noor_app/contact.dart';
+import 'Drugs.dart';
+import 'Result.dart';
 import 'appointments.dart';
 import 'home_page.dart';
 import 'login_page.dart';
@@ -52,6 +54,12 @@ class MyApp extends StatelessWidget {
         },
         'Service': (context) {
           return Service();
+        },
+        'Drugs': (context) {
+          return Drugs();
+        },
+        'Result': (context) {
+          return Result();
         },
         'Appointments': (context) {
           return Appointments();
