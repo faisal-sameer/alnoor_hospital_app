@@ -31,7 +31,7 @@ class _AppointmentsState extends State<Appointments> {
               Navigator.of(context).pop();
             },
             icon: Icon(
-              Icons.arrow_back,
+              Icons.cancel,
               color: Colors.green,
               size: 40,
             )),

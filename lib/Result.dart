@@ -29,7 +29,7 @@ class _ResultState extends State<Result> {
               Navigator.of(context).pop();
             },
             icon: Icon(
-              Icons.arrow_back,
+              Icons.cancel,
               color: Colors.green,
               size: 40,
             )),

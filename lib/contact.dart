@@ -40,6 +40,14 @@ class _ContactState extends State<Contact> {
         child: Container(
           child: Scaffold(
             appBar: AppBar(
+              centerTitle: true,
+              title: Text(
+                "معلومات التواصل ",
+                style: TextStyle(
+                    color: Colors.green,
+                    fontSize: 30,
+                    fontWeight: FontWeight.w800),
+              ),
               elevation: 2,
               automaticallyImplyLeading: false,
               backgroundColor: Colors.white,
@@ -48,7 +56,7 @@ class _ContactState extends State<Contact> {
                     Navigator.of(context).pushNamed("homepage");
                   },
                   icon: Icon(
-                    Icons.arrow_back,
+                    Icons.cancel,
                     color: Colors.green,
                     size: 40,
                   )),

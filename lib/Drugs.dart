@@ -29,7 +29,7 @@ class _DrugsState extends State<Drugs> {
               Navigator.of(context).pop();
             },
             icon: Icon(
-              Icons.arrow_back,
+              Icons.cancel,
               color: Colors.green,
               size: 40,
             )),
