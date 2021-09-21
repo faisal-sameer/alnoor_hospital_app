@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:noor_app/contact.dart';
 import 'Drugs.dart';
 import 'Result.dart';
+import 'Result_department_lab.dart';
 import 'appointments.dart';
 import 'home_page.dart';
 import 'login_page.dart';
+import 'orderResultNumber.dart';
 import 'profile.dart';
 import 'service.dart';
 
@@ -63,6 +65,12 @@ class MyApp extends StatelessWidget {
         },
         'Appointments': (context) {
           return Appointments();
+        },
+        'Result_department_lab': (context) {
+          return Result_department_lab();
+        },
+        'OrderResultNumber': (context) {
+          return OrderResultNumber();
         },
       },
     );

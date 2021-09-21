@@ -61,7 +61,8 @@ class _ServiceState extends State<Service> {
                   children: <Widget>[
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).pushNamed("Result");
+                        Navigator.of(context)
+                            .pushNamed("Result_department_lab");
                       },
                       child: Container(
                         height: 150,

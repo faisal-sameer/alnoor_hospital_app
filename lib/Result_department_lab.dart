@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Result extends StatefulWidget {
-  const Result({Key? key}) : super(key: key);
+class Result_department_lab extends StatefulWidget {
+  const Result_department_lab({Key? key}) : super(key: key);
 
   @override
-  _ResultState createState() => _ResultState();
+  _Result_department_labState createState() => _Result_department_labState();
 }
 
-class _ResultState extends State<Result> {
+class _Result_department_labState extends State<Result_department_lab> {
   @override
   Widget build(BuildContext context) {
     var mdw = MediaQuery.of(context).size.width;
@@ -47,33 +47,37 @@ class _ResultState extends State<Result> {
           height: mdh,
           child: ListView(
             children: [
-              for (var i = 0; i < 10; i++)
-                Card(
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).pushNamed("OrderResultNumber");
+                },
+                child: Card(
                   elevation: 5,
                   child: ListTile(
                     dense: true,
                     title: Align(
-                      alignment: Alignment.topLeft,
+                      alignment: Alignment.center,
                       child: Text(
-                        " LEUCOCYTES${i} : CBC(total)",
+                        "رقم الطلب : 30141",
                         style: TextStyle(fontSize: 15),
                       ),
                     ),
                     subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          "Result: ${i}.6${i} ",
+                          "القسم : الطوارئ والاسعاف",
                           style: TextStyle(fontSize: 15),
                         ),
                         Text(
-                          "Normal Range: ${i}.67 ",
+                          "تاريخ الطلب : 11-1-1443",
                           style: TextStyle(fontSize: 15),
                         )
                       ],
                     ),
                   ),
                 ),
+              ),
               SizedBox(
                 height: 10,
               ),
