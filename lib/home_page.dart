@@ -23,25 +23,36 @@ class _homepageState extends State<homepage> {
         textDirection: TextDirection.rtl,
         child: Container(
           child: Scaffold(
-            appBar: AppBar(
-              centerTitle: true,
-              title: Image.asset(
-                'assets/images/842px-Saudi_Ministry_of_Health_Logo.svg.png',
-                width: 100,
-                height: 55,
+            appBar: PreferredSize(
+              preferredSize: Size.fromHeight(90.0),
+              child: AppBar(
+                actions: [
+                  Image.asset(
+                    'assets/images/842px-Saudi_Ministry_of_Health_Logo.svg.png',
+                    width: 90,
+                    height: 75,
+                  )
+                ],
+                toolbarHeight: 100,
+                centerTitle: true,
+                title: Image.asset(
+                  'assets/images/Clus_1.png',
+                  width: 100,
+                  height: 85,
+                ),
+                elevation: 2,
+                automaticallyImplyLeading: false,
+                backgroundColor: Colors.white,
+                leading: IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed("LoginPage");
+                    },
+                    icon: Icon(
+                      Icons.logout,
+                      color: Colors.green,
+                      size: 40,
+                    )),
               ),
-              elevation: 2,
-              automaticallyImplyLeading: false,
-              backgroundColor: Colors.white,
-              leading: IconButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed("LoginPage");
-                  },
-                  icon: Icon(
-                    Icons.logout,
-                    color: Colors.green,
-                    size: 40,
-                  )),
             ),
             body: SafeArea(
               child: Directionality(
